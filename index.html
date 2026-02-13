@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLASH-SERIES — турнирный оператор</title>
-    <link rel="icon" type="image/png" href="/logo.png">
+    <!-- Иконка сайта (favicon) - PNG логотип -->
+    <link rel="icon" type="image/png" href="logo.png">
     <!-- Шрифт Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -16,6 +17,7 @@
             box-sizing: border-box;
         }
 
+        /* ========== СВЕТЛАЯ ТЕМА (по умолчанию) ========== */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
@@ -24,6 +26,177 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* ========== ТЁМНАЯ ТЕМА - ВЕСЬ ТЕКСТ БЕЛЫЙ ========== */
+        body.dark-theme {
+            background-color: #0f172a;
+            color: #ffffff;
+        }
+
+        body.dark-theme header {
+            border-bottom-color: #334155;
+        }
+
+        body.dark-theme .logo-flash,
+        body.dark-theme .logo-series {
+            color: #ffffff;
+        }
+
+        body.dark-theme .nav-tabs {
+            background-color: #1e293b;
+        }
+
+        body.dark-theme .tab {
+            color: #f1f5f9;
+        }
+
+        body.dark-theme .tab:not(.active):hover {
+            background-color: #334155;
+            color: #ffffff;
+        }
+
+        body.dark-theme .tab.active {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        body.dark-theme .news-card,
+        body.dark-theme .card {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        body.dark-theme .news-card p,
+        body.dark-theme .card p {
+            color: #ffffff;
+        }
+
+        body.dark-theme .card-title {
+            color: #ffffff;
+        }
+
+        body.dark-theme .meta {
+            color: #e2e8f0;
+        }
+
+        body.dark-theme .score {
+            background-color: #334155;
+            color: #ffffff;
+        }
+
+        body.dark-theme .team {
+            color: #ffffff;
+        }
+
+        body.dark-theme .rank-item {
+            border-bottom-color: #334155;
+        }
+
+        body.dark-theme .rank-position {
+            color: #cbd5e1;
+        }
+
+        body.dark-theme .rank-name {
+            color: #ffffff;
+        }
+
+        body.dark-theme .rank-points {
+            color: #ffffff;
+        }
+
+        body.dark-theme .section-title {
+            color: #ffffff;
+        }
+
+        body.dark-theme .section-desc {
+            background-color: #1e293b;
+            color: #ffffff;
+            border-left-color: #3b82f6;
+        }
+
+        body.dark-theme .section-desc i {
+            color: #ffffff;
+        }
+
+        /* Адаптация надписи "Уже скоро!" */
+        body.dark-theme .match-header {
+            color: #ffffff !important;
+        }
+
+        body.dark-theme .match-header i {
+            color: #93c5fd !important;
+        }
+
+        body.dark-theme .match-header span {
+            color: #ffffff !important;
+        }
+
+        body.dark-theme .footer-shade {
+            background-color: #1e293b;
+            border-top-color: #334155;
+        }
+
+        body.dark-theme .footer-copyright {
+            color: #ffffff;
+        }
+
+        body.dark-theme .footer-copyright span {
+            background-color: #334155;
+            color: #ffffff;
+        }
+
+        body.dark-theme .telegram-link {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        body.dark-theme .telegram-link:hover {
+            background-color: #2563eb;
+        }
+
+        body.dark-theme .twitch-button {
+            background-color: #772ce8;
+            color: #ffffff;
+        }
+
+        body.dark-theme .twitch-button:hover {
+            background-color: #5a1fb0;
+        }
+
+        body.dark-theme .news-scroll-container::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+        }
+
+        body.dark-theme .news-scroll-container::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        body.dark-theme .theme-toggle {
+            color: #fbbf24;
+            background-color: #1e293b;
+        }
+
+        body.dark-theme .meta span[style*="color:#2563eb"] {
+            color: #93c5fd !important;
+        }
+
+        body.dark-theme .fa-shield[style*="color:#2563eb"] {
+            color: #93c5fd !important;
+        }
+
+        body.dark-theme .fa-shield[style*="color:#475569"] {
+            color: #94a3b8 !important;
+        }
+
+        body.dark-theme .fa-bolt[style*="color: #2563eb"] {
+            color: #93c5fd !important;
+        }
+
+        body.dark-theme p[style*="background-color: #f1f5f9"] {
+            background-color: #1e293b !important;
+            color: #ffffff !important;
         }
 
         .wrapper {
@@ -45,6 +218,7 @@
             border-bottom: 2px solid #e2e8f0;
             flex-wrap: wrap;
             gap: 20px;
+            transition: border-color 0.3s;
         }
 
         .logo-area {
@@ -58,6 +232,7 @@
             font-size: 28px;
             letter-spacing: -0.5px;
             color: #0f2b4b;
+            transition: color 0.3s;
         }
 
         .logo-series {
@@ -65,6 +240,7 @@
             font-size: 28px;
             letter-spacing: -0.5px;
             color: #0f2b4b;
+            transition: color 0.3s;
         }
 
         .nav-tabs {
@@ -73,6 +249,7 @@
             background-color: #f1f5f9;
             padding: 6px;
             border-radius: 40px;
+            transition: background-color 0.3s;
         }
 
         .tab {
@@ -100,6 +277,33 @@
         .tab:not(.active):hover {
             background-color: #e0e7ff;
             color: #1e40af;
+        }
+
+        /* ========== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ========== */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #2563eb;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
         /* ========== КОНТЕНТ ========== */
@@ -134,11 +338,13 @@
         .news-scroll-container::-webkit-scrollbar-track {
             background: #f1f5f9;
             border-radius: 10px;
+            transition: background 0.3s;
         }
 
         .news-scroll-container::-webkit-scrollbar-thumb {
             background: #2563eb;
             border-radius: 10px;
+            transition: background 0.3s;
         }
 
         .news-scroll-container::-webkit-scrollbar-thumb:hover {
@@ -164,7 +370,7 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            transition: 0.2s ease;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
         }
 
         .news-card:hover {
@@ -181,6 +387,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            transition: color 0.3s;
         }
 
         .card-title i {
@@ -197,6 +404,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            transition: color 0.3s;
         }
 
         .news-card p {
@@ -208,6 +416,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
+            transition: color 0.3s;
         }
 
         /* ========== КАРТОЧКИ МАТЧЕЙ ========== */
@@ -217,6 +426,28 @@
             border-radius: 20px;
             padding: 24px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .match-header {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 24px;
+            color: #2563eb;
+            transition: color 0.3s;
+        }
+
+        .match-header i {
+            font-size: 28px;
+            transition: color 0.3s;
+        }
+
+        .match-header span {
+            font-weight: 700;
+            font-size: 20px;
+            color: #0f2b4b;
+            transition: color 0.3s;
         }
 
         .match-row {
@@ -225,6 +456,7 @@
             justify-content: space-between;
             padding: 16px 0;
             border-bottom: 1px solid #f1f5f9;
+            transition: border-color 0.3s;
         }
 
         .match-row:last-child {
@@ -235,6 +467,7 @@
             font-weight: 600;
             color: #1e293b;
             flex: 1;
+            transition: color 0.3s;
         }
 
         .team-left {
@@ -254,6 +487,7 @@
             margin: 0 20px;
             min-width: 80px;
             text-align: center;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         /* ========== РЕЙТИНГ ========== */
@@ -267,6 +501,7 @@
             padding: 14px 0;
             border-bottom: 1px solid #f1f5f9;
             gap: 16px;
+            transition: border-color 0.3s;
         }
 
         .rank-item:last-child {
@@ -278,17 +513,20 @@
             font-size: 18px;
             color: #94a3b8;
             width: 32px;
+            transition: color 0.3s;
         }
 
         .rank-name {
             font-weight: 600;
             flex: 1;
             color: #1e293b;
+            transition: color 0.3s;
         }
 
         .rank-points {
             color: #2563eb;
             font-weight: 700;
+            transition: color 0.3s;
         }
 
         .section-title {
@@ -296,6 +534,7 @@
             font-weight: 700;
             color: #0b2b4a;
             margin-bottom: 8px;
+            transition: color 0.3s;
         }
 
         .section-desc {
@@ -307,6 +546,7 @@
             border-radius: 0 12px 12px 0;
             line-height: 1.6;
             padding: 16px 20px;
+            transition: background-color 0.3s, color 0.3s, border-left-color 0.3s;
         }
 
         /* ========== КНОПКА TWITCH ========== */
@@ -345,6 +585,7 @@
             margin-top: 20px;
             width: 100%;
             box-shadow: 0 -6px 14px rgba(0,0,0,0.02);
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         .footer-content {
@@ -363,6 +604,7 @@
             gap: 12px;
             color: #334155;
             font-weight: 500;
+            transition: color 0.3s;
         }
 
         .footer-copyright span {
@@ -373,6 +615,7 @@
             letter-spacing: 0.5px;
             color: #0f172a;
             font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .telegram-link {
@@ -420,21 +663,30 @@
             .score {
                 margin: 10px 0;
             }
+            .header-right {
+                width: 100%;
+                justify-content: space-between;
+            }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- Шапка: FLASH-SERIES -->
+        <!-- Шапка: FLASH-SERIES с переключателем темы -->
         <header>
             <div class="logo-area">
                 <span class="logo-flash">FLASH</span>
                 <span class="logo-series">-SERIES</span>
             </div>
-            <div class="nav-tabs" id="tabHeaders">
-                <button class="tab active" data-tab="news"><i class="fas fa-newspaper"></i> Новости</button>
-                <button class="tab" data-tab="matches"><i class="fas fa-calendar-alt"></i> Матчи</button>
-                <button class="tab" data-tab="rating"><i class="fas fa-trophy"></i> Рейтинг</button>
+            <div class="header-right">
+                <div class="nav-tabs" id="tabHeaders">
+                    <button class="tab active" data-tab="news"><i class="fas fa-newspaper"></i> Новости</button>
+                    <button class="tab" data-tab="matches"><i class="fas fa-calendar-alt"></i> Матчи</button>
+                    <button class="tab" data-tab="rating"><i class="fas fa-trophy"></i> Рейтинг</button>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </header>
 
@@ -454,7 +706,7 @@
                             <p>Запускаем обновлённую систему рейтинга! Теперь очки начисляются за каждый сыгранный матч, а лучшие команды получают инвайты на закрытые квалификации.</p>
                         </div>
                         
-                        <!-- 2. Анонс однодневных турниров FS-SPIRE - ИСПРАВЛЕНО -->
+                        <!-- 2. Анонс однодневных турниров FS-SPIRE -->
                         <div class="news-card">
                             <div class="card-title"><i class="fas fa-bolt"></i> FS-SPIRE: однодневные турниры</div>
                             <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
@@ -485,9 +737,9 @@
                 <h2 class="section-title">Ближайшие матчи</h2>
                 <div class="section-desc">Прямые трансляции и расписание FLASH-SERIES</div>
                 <div class="card" style="padding: 28px;">
-                    <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px; color: #2563eb;">
-                        <i class="fas fa-video" style="font-size: 28px;"></i>
-                        <span style="font-weight: 700; font-size: 20px; color: #0f2b4b;">Уже скоро!</span>
+                    <div class="match-header">
+                        <i class="fas fa-video"></i>
+                        <span>Уже скоро!</span>
                     </div>
                     
                     <div class="match-row">
@@ -515,7 +767,7 @@
                 </div>
             </div>
 
-            <!-- РЕЙТИНГ - ВСЕ КОМАНДЫ TBD, ОЧКИ 100 -->
+            <!-- РЕЙТИНГ -->
             <div id="rating" class="tab-pane">
                 <h2 class="section-title">Рейтинг FLASH-SERIES</h2>
                 <div class="section-desc">Лучшие команды сезона 2026 — официальные очки</div>
@@ -573,9 +825,10 @@
         </div>
     </div>
 
-    <!-- JS для вкладок -->
+    <!-- JS для вкладок и смены темы -->
     <script>
         (function() {
+            // Переключение вкладок
             const tabs = document.querySelectorAll('.tab');
             const panes = document.querySelectorAll('.tab-pane');
 
@@ -599,6 +852,33 @@
             });
 
             activateTab('news');
+
+            // Переключение темы
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            const themeIcon = themeToggle.querySelector('i');
+
+            // Проверяем сохранённую тему
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-theme');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-theme');
+                
+                if (body.classList.contains('dark-theme')) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
         })();
     </script>
 </body>
