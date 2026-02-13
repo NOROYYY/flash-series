@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>FLASH-SERIES</title>
     <!-- Иконка сайта (favicon) - PNG логотип -->
     <link rel="icon" type="image/png" href="logo.png">
@@ -29,7 +29,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* ========== ТЁМНАЯ ТЕМА - ВЕСЬ ТЕКСТ БЕЛЫЙ ========== */
+        /* ========== ТЁМНАЯ ТЕМА ========== */
         body.dark-theme {
             background-color: #0f172a;
             color: #ffffff;
@@ -116,11 +116,6 @@
             border-left-color: #3b82f6;
         }
 
-        body.dark-theme .section-desc i {
-            color: #ffffff;
-        }
-
-        /* Адаптация надписи "Уже скоро!" */
         body.dark-theme .match-header {
             color: #ffffff !important;
         }
@@ -138,12 +133,11 @@
             border-top-color: #334155;
         }
 
-        body.dark-theme .footer-copyright {
-            color: #ffffff;
+        body.dark-theme .footer-logo-block {
+            background-color: #334155;
         }
 
-        body.dark-theme .footer-copyright span {
-            background-color: #334155;
+        body.dark-theme .footer-logo-block span {
             color: #ffffff;
         }
 
@@ -202,7 +196,7 @@
         .wrapper {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 32px;
+            padding: 0 16px;
             width: 100%;
             flex: 1;
             display: flex;
@@ -214,22 +208,22 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 24px 0;
+            padding: 20px 0;
             border-bottom: 2px solid #e2e8f0;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 16px;
             transition: border-color 0.3s;
         }
 
         .logo-area {
             display: flex;
             align-items: baseline;
-            gap: 6px;
+            gap: 4px;
         }
 
         .logo-flash {
             font-weight: 800;
-            font-size: 28px;
+            font-size: 24px;
             letter-spacing: -0.5px;
             color: #0f2b4b;
             transition: color 0.3s;
@@ -237,7 +231,7 @@
 
         .logo-series {
             font-weight: 800;
-            font-size: 28px;
+            font-size: 24px;
             letter-spacing: -0.5px;
             color: #0f2b4b;
             transition: color 0.3s;
@@ -245,28 +239,30 @@
 
         .nav-tabs {
             display: flex;
-            gap: 8px;
+            gap: 4px;
             background-color: #f1f5f9;
-            padding: 6px;
-            border-radius: 40px;
+            padding: 4px;
+            border-radius: 30px;
             transition: background-color 0.3s;
+            flex-wrap: wrap;
         }
 
         .tab {
-            padding: 10px 24px;
+            padding: 8px 16px;
             font-weight: 600;
-            font-size: 16px;
-            border-radius: 32px;
+            font-size: 14px;
+            border-radius: 30px;
             color: #334155;
             background: transparent;
             border: none;
             cursor: pointer;
             transition: all 0.15s;
+            white-space: nowrap;
         }
 
         .tab i {
-            margin-right: 8px;
-            font-size: 15px;
+            margin-right: 6px;
+            font-size: 13px;
         }
 
         .tab.active {
@@ -283,17 +279,18 @@
         .theme-toggle {
             background: transparent;
             border: none;
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
             color: #2563eb;
             transition: color 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: #f1f5f9;
+            flex-shrink: 0;
         }
 
         .theme-toggle:hover {
@@ -303,12 +300,14 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         /* ========== КОНТЕНТ ========== */
         .content-section {
-            margin: 40px 0 20px;
+            margin: 30px 0 20px;
             flex: 1;
         }
 
@@ -325,14 +324,15 @@
             width: 100%;
             overflow-x: auto;
             overflow-y: visible;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
             scrollbar-width: thin;
             scrollbar-color: #2563eb #e2e8f0;
+            -webkit-overflow-scrolling: touch;
         }
 
         .news-scroll-container::-webkit-scrollbar {
-            height: 8px;
+            height: 6px;
         }
 
         .news-scroll-container::-webkit-scrollbar-track {
@@ -354,7 +354,7 @@
         .news-horizontal-grid {
             display: flex;
             flex-direction: row;
-            gap: 28px;
+            gap: 16px;
             width: max-content;
             padding: 4px 4px 8px 4px;
         }
@@ -363,10 +363,10 @@
         .news-card {
             background: white;
             border: 1px solid #e2e8f0;
-            border-radius: 24px;
-            padding: 28px 24px;
-            width: 400px;
-            height: 300px;
+            border-radius: 20px;
+            padding: 20px;
+            width: 280px;
+            height: 260px;
             display: flex;
             flex-direction: column;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
@@ -380,41 +380,42 @@
         }
 
         .card-title {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             color: #0a1e3c;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             transition: color 0.3s;
         }
 
         .card-title i {
             color: #2563eb;
-            font-size: 26px;
-            width: 32px;
+            font-size: 20px;
+            width: 24px;
             text-align: center;
         }
 
         .meta {
-            font-size: 14px;
+            font-size: 12px;
             color: #64748b;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             transition: color 0.3s;
+            flex-wrap: wrap;
         }
 
         .news-card p {
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 14px;
+            line-height: 1.5;
             color: #334155;
             flex: 1;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             transition: color 0.3s;
         }
@@ -424,28 +425,29 @@
             background: white;
             border: 1px solid #e2e8f0;
             border-radius: 20px;
-            padding: 24px;
+            padding: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
             transition: background-color 0.3s, border-color 0.3s;
         }
 
         .match-header {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             align-items: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: #2563eb;
             transition: color 0.3s;
+            flex-wrap: wrap;
         }
 
         .match-header i {
-            font-size: 28px;
+            font-size: 24px;
             transition: color 0.3s;
         }
 
         .match-header span {
             font-weight: 700;
-            font-size: 20px;
+            font-size: 18px;
             color: #0f2b4b;
             transition: color 0.3s;
         }
@@ -454,9 +456,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 0;
+            padding: 14px 0;
             border-bottom: 1px solid #f1f5f9;
             transition: border-color 0.3s;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .match-row:last-child {
@@ -468,6 +472,7 @@
             color: #1e293b;
             flex: 1;
             transition: color 0.3s;
+            font-size: 14px;
         }
 
         .team-left {
@@ -480,14 +485,15 @@
 
         .score {
             background-color: #f1f5f9;
-            padding: 6px 20px;
+            padding: 4px 16px;
             border-radius: 30px;
             font-weight: 700;
             color: #2563eb;
-            margin: 0 20px;
-            min-width: 80px;
+            margin: 0 10px;
+            min-width: 70px;
             text-align: center;
             transition: background-color 0.3s, color 0.3s;
+            font-size: 14px;
         }
 
         /* ========== РЕЙТИНГ ========== */
@@ -498,10 +504,11 @@
         .rank-item {
             display: flex;
             align-items: center;
-            padding: 14px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #f1f5f9;
-            gap: 16px;
+            gap: 12px;
             transition: border-color 0.3s;
+            flex-wrap: wrap;
         }
 
         .rank-item:last-child {
@@ -510,9 +517,9 @@
 
         .rank-position {
             font-weight: 800;
-            font-size: 18px;
+            font-size: 16px;
             color: #94a3b8;
-            width: 32px;
+            width: 28px;
             transition: color 0.3s;
         }
 
@@ -521,16 +528,18 @@
             flex: 1;
             color: #1e293b;
             transition: color 0.3s;
+            font-size: 14px;
         }
 
         .rank-points {
             color: #2563eb;
             font-weight: 700;
             transition: color 0.3s;
+            font-size: 14px;
         }
 
         .section-title {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             color: #0b2b4a;
             margin-bottom: 8px;
@@ -539,36 +548,39 @@
 
         .section-desc {
             color: #475569;
-            margin-bottom: 28px;
-            border-left: 5px solid #2563eb;
-            padding-left: 18px;
+            margin-bottom: 24px;
+            border-left: 4px solid #2563eb;
+            padding-left: 14px;
             background-color: #f8fafc;
             border-radius: 0 12px 12px 0;
-            line-height: 1.6;
-            padding: 16px 20px;
+            line-height: 1.5;
+            padding: 12px 16px;
             transition: background-color 0.3s, color 0.3s, border-left-color 0.3s;
+            font-size: 14px;
         }
 
         /* ========== КНОПКА TWITCH ========== */
         .twitch-button {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 10px;
             background-color: #9146FF;
             color: white;
-            padding: 16px 36px;
+            padding: 14px 24px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             transition: all 0.2s;
             border: none;
-            margin-top: 24px;
+            margin-top: 20px;
             box-shadow: 0 4px 12px rgba(145, 70, 255, 0.25);
+            width: 100%;
         }
 
         .twitch-button i {
-            font-size: 24px;
+            font-size: 20px;
         }
 
         .twitch-button:hover {
@@ -581,7 +593,7 @@
         .footer-shade {
             background-color: #f8fafc;
             border-top: 1px solid #cbd5e1;
-            padding: 28px 0;
+            padding: 20px 0;
             margin-top: 20px;
             width: 100%;
             box-shadow: 0 -6px 14px rgba(0,0,0,0.02);
@@ -591,49 +603,66 @@
         .footer-content {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 32px;
+            padding: 0 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            gap: 16px;
         }
 
-        .footer-copyright {
+        .footer-logo-block {
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #334155;
-            font-weight: 500;
+            justify-content: center;
+            gap: 10px;
+            background-color: #e2e8f0;
+            padding: 10px 20px;
+            border-radius: 40px;
+            height: 48px;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .footer-logo-block i {
+            color: #2563eb;
+            font-size: 18px;
             transition: color 0.3s;
         }
 
-        .footer-copyright span {
-            background: #e2e8f0;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 16px;
+        .footer-logo-block span {
+            font-weight: 600;
+            font-size: 15px;
             letter-spacing: 0.5px;
             color: #0f172a;
-            font-weight: 600;
-            transition: background-color 0.3s, color 0.3s;
+            white-space: nowrap;
+            transition: color 0.3s;
         }
 
         .telegram-link {
             background-color: #2563eb;
             color: white;
-            padding: 12px 32px;
+            padding: 10px 20px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 12px;
-            transition: background 0.15s;
-            font-size: 17px;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.15s;
+            font-size: 15px;
+            height: 48px;
+            box-sizing: border-box;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 180px;
         }
 
         .telegram-link i {
-            font-size: 22px;
+            font-size: 18px;
         }
 
         .telegram-link:hover {
@@ -641,31 +670,150 @@
             box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
         }
 
-        @media (max-width: 750px) {
+        /* ========== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ========== */
+        @media (max-width: 600px) {
+            .wrapper {
+                padding: 0 12px;
+            }
+
             header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
+                padding: 16px 0;
             }
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-                align-items: flex-start;
-            }
-            .news-card {
-                width: 320px;
-                height: 320px;
-                padding: 20px;
-            }
-            .match-row {
-                flex-wrap: wrap;
+
+            .logo-area {
                 justify-content: center;
             }
-            .score {
-                margin: 10px 0;
+
+            .logo-flash, .logo-series {
+                font-size: 22px;
             }
+
             .header-right {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .nav-tabs {
+                justify-content: center;
                 width: 100%;
-                justify-content: space-between;
+            }
+
+            .tab {
+                padding: 8px 12px;
+                font-size: 13px;
+                flex: 1;
+                text-align: center;
+            }
+
+            .tab i {
+                margin-right: 4px;
+            }
+
+            .theme-toggle {
+                align-self: flex-end;
+                margin-top: -50px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .section-desc {
+                font-size: 13px;
+                padding: 10px 14px;
+            }
+
+            .news-card {
+                width: 260px;
+                height: 250px;
+                padding: 16px;
+            }
+
+            .card-title {
+                font-size: 16px;
+            }
+
+            .card-title i {
+                font-size: 18px;
+            }
+
+            .meta {
+                font-size: 11px;
+            }
+
+            .news-card p {
+                font-size: 13px;
+                -webkit-line-clamp: 4;
+            }
+
+            .match-header span {
+                font-size: 16px;
+            }
+
+            .match-row {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .team-left, .team-right {
+                text-align: center;
+            }
+
+            .score {
+                margin: 8px 0;
+                align-self: center;
+            }
+
+            .rank-item {
+                gap: 8px;
+            }
+
+            .rank-position {
+                width: 24px;
+                font-size: 14px;
+            }
+
+            .rank-name, .rank-points {
+                font-size: 13px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-logo-block, .telegram-link {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .twitch-button {
+                font-size: 15px;
+                padding: 12px 20px;
+            }
+        }
+
+        /* Для очень маленьких экранов */
+        @media (max-width: 380px) {
+            .tab {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+
+            .tab i {
+                display: none;
+            }
+
+            .news-card {
+                width: 220px;
+                height: 240px;
+            }
+
+            .card-title {
+                font-size: 15px;
             }
         }
     </style>
@@ -699,44 +847,42 @@
                 
                 <div class="news-scroll-container">
                     <div class="news-horizontal-grid">
-                        <!-- 1. Анонс нового рейтинга FLASH-SERIES -->
+                        <!-- 1. Анонс нового рейтинга -->
                         <div class="news-card">
-                            <div class="card-title"><i class="fas fa-chart-line"></i> Новый рейтинг FLASH-SERIES</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
-                            <p>Запускаем обновлённую систему рейтинга! Теперь очки начисляются за каждый сыгранный матч, а лучшие команды получают инвайты на закрытые квалификации.</p>
+                            <div class="card-title"><i class="fas fa-chart-line"></i> Новый рейтинг</div>
+                            <div class="meta"><i class="far fa-clock"></i> 13 фев · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
+                            <p>Запускаем обновлённую систему рейтинга! Очки за каждый матч, инвайты на закрытые квалификации.</p>
                         </div>
                         
-                        <!-- 2. Анонс однодневных турниров FS-SPIRE -->
+                        <!-- 2. Анонс FS-SPIRE -->
                         <div class="news-card">
-                            <div class="card-title"><i class="fas fa-bolt"></i> FS-SPIRE: однодневные турниры</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
-                            <p>Регулярный турнир — FS-SPIRE! Взнос 200₽ с команды, турнир в один день от 2-х команд. Формат BO1, сетка Single-Elimination. Старт уже в следующую субботу!</p>
+                            <div class="card-title"><i class="fas fa-bolt"></i> FS-SPIRE</div>
+                            <div class="meta"><i class="far fa-clock"></i> 13 фев · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
+                            <p>Каждое воскресенье! Взнос 200₽, турнир в один день. BO1, Single-Elimination. Старт в следующее воскресенье!</p>
                         </div>
                         
-                        <!-- 3. Анонс FS-MAJOR в сентябре -->
+                        <!-- 3. Анонс FS-MAJOR -->
                         <div class="news-card">
                             <div class="card-title"><i class="fas fa-trophy"></i> FS-MAJOR 2026</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
-                            <p>Главный турнир года — FS-MAJOR — пройдёт в августе! Призовой фонд от 10000 ₽, инвайты на турнир в соответствии с рейтингом!</p>
+                            <div class="meta"><i class="far fa-clock"></i> 13 фев · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
+                            <p>Главный турнир года в сентябре! Призовой фонд от 10000 ₽, инвайты по рейтингу.</p>
                         </div>
                         
-                        <!-- 4. Новый сайт FLASH-SERIES -->
+                        <!-- 4. Новый сайт -->
                         <div class="news-card">
-                            <div class="card-title"><i class="fas fa-globe"></i> Новый сайт FLASH-SERIES</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">обновление</span></div>
-                            <p>Встречайте полностью новый сайт FLASH-SERIES! Удобная навигация, информация о матчах, последних новостях и рейтинг. Все турниры в одном месте!</p>
+                            <div class="card-title"><i class="fas fa-globe"></i> Новый сайт</div>
+                            <div class="meta"><i class="far fa-clock"></i> 13 фев · <span style="color:#2563eb; font-weight: 600;">обновление</span></div>
+                            <p>Новый сайт FLASH-SERIES! Удобная навигация, матчи, новости и рейтинг в одном месте.</p>
                         </div>
                     </div>
                 </div>
-                
-                <div style="height: 20px;"></div>
             </div>
 
-            <!-- МАТЧИ - ВСЕ КОМАНДЫ TBD, СЧЁТ 0:0 -->
+            <!-- МАТЧИ -->
             <div id="matches" class="tab-pane">
                 <h2 class="section-title">Ближайшие матчи</h2>
-                <div class="section-desc">Прямые трансляции и расписание FLASH-SERIES</div>
-                <div class="card" style="padding: 28px;">
+                <div class="section-desc">Прямые трансляции и расписание</div>
+                <div class="card">
                     <div class="match-header">
                         <i class="fas fa-video"></i>
                         <span>Уже скоро!</span>
@@ -760,63 +906,61 @@
                 </div>
                 
                 <!-- Кнопка Twitch -->
-                <div style="margin-top: 32px;">
-                    <a href="https://www.twitch.tv/noroyyy" target="_blank" class="twitch-button">
-                        <i class="fab fa-twitch"></i> Смотреть трансляцию на Twitch
-                    </a>
-                </div>
+                <a href="https://www.twitch.tv/noroyyy" target="_blank" class="twitch-button">
+                    <i class="fab fa-twitch"></i> Смотреть на Twitch
+                </a>
             </div>
 
             <!-- РЕЙТИНГ -->
             <div id="rating" class="tab-pane">
-                <h2 class="section-title">Рейтинг FLASH-SERIES</h2>
-                <div class="section-desc">Лучшие команды сезона 2026 — официальные очки</div>
-                <div class="card" style="padding: 20px 28px;">
+                <h2 class="section-title">Рейтинг</h2>
+                <div class="section-desc">Официальные очки сезона 2026</div>
+                <div class="card">
                     <ul class="rank-list">
                         <li class="rank-item">
                             <span class="rank-position">1</span>
                             <span class="rank-name">EXILES TEAM</span>
-                            <span class="rank-points">250 pts</span>
+                            <span class="rank-points">250</span>
                         </li>
                         <li class="rank-item">
                             <span class="rank-position">2</span>
                             <span class="rank-name">VORTEX SURGE</span>
-                            <span class="rank-points">145 pts</span>
+                            <span class="rank-points">145</span>
                         </li>
                         <li class="rank-item">
                             <span class="rank-position">3</span>
                             <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
+                            <span class="rank-points">100</span>
                         </li>
                         <li class="rank-item">
                             <span class="rank-position">4</span>
                             <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
+                            <span class="rank-points">100</span>
                         </li>
                         <li class="rank-item">
                             <span class="rank-position">5</span>
                             <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
+                            <span class="rank-points">100</span>
                         </li>
                         <li class="rank-item">
                             <span class="rank-position">6</span>
                             <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
+                            <span class="rank-points">100</span>
                         </li>
                     </ul>
                 </div>
-                <p style="margin-top: 28px; background-color: #f1f5f9; padding: 14px 24px; border-radius: 16px; color: #1e293b; display: inline-block;">
-                    <i class="fas fa-chart-line" style="color:#2563eb; margin-right: 10px;"></i> Следующее обновление рейтинга: 20 февраля
+                <p style="margin-top: 20px; background-color: #f1f5f9; padding: 12px 20px; border-radius: 16px; color: #1e293b; display: inline-block; width: 100%; text-align: center; font-size: 14px;">
+                    <i class="fas fa-chart-line" style="color:#2563eb; margin-right: 8px;"></i> Обновление: 20 февраля
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- ШТОРКА с Telegram -->
+    <!-- ШТОРКА -->
     <div class="footer-shade">
         <div class="footer-content">
-            <div class="footer-copyright">
-                <i class="fas fa-bolt" style="color: #2563eb; font-size: 20px;"></i>
+            <div class="footer-logo-block">
+                <i class="fas fa-bolt"></i>
                 <span>FLASH-SERIES 2026</span>
             </div>
             <a href="https://t.me/FLASHSERIESCS" target="_blank" class="telegram-link">
@@ -825,10 +969,9 @@
         </div>
     </div>
 
-    <!-- JS для вкладок и смены темы -->
+    <!-- JS -->
     <script>
         (function() {
-            // Переключение вкладок
             const tabs = document.querySelectorAll('.tab');
             const panes = document.querySelectorAll('.tab-pane');
 
@@ -853,12 +996,10 @@
 
             activateTab('news');
 
-            // Переключение темы
             const themeToggle = document.getElementById('themeToggle');
             const body = document.body;
             const themeIcon = themeToggle.querySelector('i');
 
-            // Проверяем сохранённую тему
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 body.classList.add('dark-theme');
