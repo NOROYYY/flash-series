@@ -577,10 +577,6 @@
             width: auto;
         }
 
-        .twitch-button i {
-            font-size: 22px;
-        }
-
         .twitch-button:hover {
             background-color: #772ce8;
             transform: translateY(-2px);
@@ -697,6 +693,7 @@
             .nav-tabs {
                 justify-content: center;
                 width: 100%;
+                order: 1; /* Вкладки сначала */
             }
 
             .tab {
@@ -711,8 +708,11 @@
             }
 
             .theme-toggle {
-                align-self: flex-end;
-                margin-top: -50px;
+                align-self: center; /* Центрируем кнопку */
+                margin: 0 auto; /* Отключаем отрицательный margin */
+                order: 2; /* Кнопка темы ПОСЛЕ вкладок */
+                width: 40px;
+                height: 40px;
             }
 
             .section-title {
