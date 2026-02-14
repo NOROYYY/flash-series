@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>FLASH-SERIES</title>
+    <title>FLASH-SERIES — темная тема</title>
     <!-- Иконка сайта (favicon) - PNG логотип -->
     <link rel="icon" type="image/png" href="logo.png">
     <!-- Шрифт Inter -->
@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* ========== СВЕТЛАЯ ТЕМА (по умолчанию) ========== */
+        /* ========== СВЕТЛАЯ ТЕМА (серая акцентная) ========== */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
@@ -29,73 +29,104 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* ========== ТЁМНАЯ ТЕМА ========== */
+        /* ========== ТЁМНАЯ ТЕМА ==========
+           фон — глубокий тёмно-серый (#1a1e2b)
+           карточки/элементы — светлый серый текст, иконки белые
+           акценты остаются серыми (#9ca3af / #d1d5db) но на тёмном фоне
+        */
         body.dark-theme {
-            background-color: #0f172a;
-            color: #ffffff;
+            background-color: #121212;   /* угольно-чёрный с лёгким серым отливом */
+            color: #f0f0f0;              /* очень светлый текст (почти белый) */
         }
 
+        /* тёмный шапка */
         body.dark-theme header {
-            border-bottom-color: #334155;
+            border-bottom-color: #2e3a47;
         }
 
+        /* логотип — белый */
         body.dark-theme .logo-flash,
         body.dark-theme .logo-series {
             color: #ffffff;
         }
 
+        /* панель вкладок */
         body.dark-theme .nav-tabs {
-            background-color: #1e293b;
+            background-color: #2a2f3a;
         }
 
         body.dark-theme .tab {
-            color: #f1f5f9;
+            color: #e0e0e0;
         }
 
         body.dark-theme .tab:not(.active):hover {
-            background-color: #334155;
+            background-color: #3f4754;
             color: #ffffff;
         }
 
+        /* активная вкладка — средне‑серый (не синий) */
         body.dark-theme .tab.active {
-            background-color: #3b82f6;
+            background-color: #6b7280;   /* серый акцент */
             color: #ffffff;
         }
 
+        /* карточки новостей, матчей, рейтинга */
         body.dark-theme .news-card,
         body.dark-theme .card {
-            background-color: #1e293b;
-            border-color: #334155;
+            background-color: #1e2632;   /* тёмный, но чуть светлее фона */
+            border-color: #3a4354;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
         }
 
         body.dark-theme .news-card p,
         body.dark-theme .card p {
-            color: #ffffff;
+            color: #f0f0f0;
         }
 
         body.dark-theme .card-title {
             color: #ffffff;
         }
 
+        /* иконки в заголовках карточек — белые */
+        body.dark-theme .card-title i {
+            color: #ffffff !important;
+        }
+
+        /* метаданные (дата, категория) — светло‑серые */
         body.dark-theme .meta {
-            color: #e2e8f0;
+            color: #cbd5e1;
         }
 
+        /* специальные цветные метки (анонс/обновление) */
+        body.dark-theme .meta span {
+            color: #d1d5db !important;   /* светло‑серый */
+            font-weight: 600;
+        }
+
+        /* счёт в матчах */
         body.dark-theme .score {
-            background-color: #334155;
+            background-color: #2e3a47;
             color: #ffffff;
         }
 
+        /* команды */
         body.dark-theme .team {
-            color: #ffffff;
+            color: #f2f2f2;
         }
 
+        /* иконки щита — белые */
+        body.dark-theme .team-left i,
+        body.dark-theme .team-right i {
+            color: #ffffff !important;
+        }
+
+        /* рейтинг */
         body.dark-theme .rank-item {
-            border-bottom-color: #334155;
+            border-bottom-color: #3a4354;
         }
 
         body.dark-theme .rank-position {
-            color: #cbd5e1;
+            color: #b0c0d0;
         }
 
         body.dark-theme .rank-name {
@@ -106,93 +137,96 @@
             color: #ffffff;
         }
 
+        /* заголовки секций */
         body.dark-theme .section-title {
             color: #ffffff;
         }
 
+        /* описание секции (серая плашка слева) */
         body.dark-theme .section-desc {
-            background-color: #1e293b;
-            color: #ffffff;
-            border-left-color: #3b82f6;
+            background-color: #1e2632;
+            color: #e0e0e0;
+            border-left-color: #9ca3af;  /* светлый серый */
         }
 
+        /* заголовок матча (иконка + "уже скоро") */
         body.dark-theme .match-header {
             color: #ffffff !important;
         }
 
         body.dark-theme .match-header i {
-            color: #93c5fd !important;
+            color: #ffffff !important;
         }
 
         body.dark-theme .match-header span {
             color: #ffffff !important;
         }
 
+        /* подвал (шторка) */
         body.dark-theme .footer-shade {
-            background-color: #1e293b;
-            border-top-color: #334155;
+            background-color: #161c26;
+            border-top-color: #2e3a47;
         }
 
         body.dark-theme .footer-logo-block {
-            background-color: #334155;
+            background-color: #2e3a47;
+        }
+
+        body.dark-theme .footer-logo-block i {
+            color: #ffffff;  /* иконка молнии белая */
         }
 
         body.dark-theme .footer-logo-block span {
             color: #ffffff;
         }
 
+        /* ссылка Telegram */
         body.dark-theme .telegram-link {
-            background-color: #3b82f6;
+            background-color: #6b7280;   /* серый */
             color: #ffffff;
         }
 
         body.dark-theme .telegram-link:hover {
-            background-color: #2563eb;
+            background-color: #4b5563;
         }
 
+        /* кнопка Twitch */
         body.dark-theme .twitch-button {
-            background-color: #772ce8;
+            background-color: #6b7280;
             color: #ffffff;
         }
 
         body.dark-theme .twitch-button:hover {
-            background-color: #5a1fb0;
+            background-color: #4b5563;
         }
 
+        /* скроллбар */
         body.dark-theme .news-scroll-container::-webkit-scrollbar-thumb {
-            background: #3b82f6;
+            background: #9ca3af; /* светлый серый */
         }
 
         body.dark-theme .news-scroll-container::-webkit-scrollbar-track {
             background: #1e293b;
         }
 
+        /* кнопка переключения темы (луна/солнце) */
         body.dark-theme .theme-toggle {
-            color: #fbbf24;
-            background-color: #1e293b;
+            color: #fbbf24;      /* жёлтый для солнца */
+            background-color: #2a2f3a;
         }
 
-        body.dark-theme .meta span[style*="color:#2563eb"] {
-            color: #93c5fd !important;
-        }
-
-        body.dark-theme .fa-shield[style*="color:#2563eb"] {
-            color: #93c5fd !important;
-        }
-
-        body.dark-theme .fa-shield[style*="color:#475569"] {
-            color: #94a3b8 !important;
-        }
-
-        body.dark-theme .fa-bolt[style*="color: #2563eb"] {
-            color: #93c5fd !important;
-        }
-
+        /* плашка "следующее обновление" */
         body.dark-theme p[style*="background-color: #f1f5f9"] {
-            background-color: #1e293b !important;
+            background-color: #1e2632 !important;
             color: #ffffff !important;
         }
 
+        /* маленькая иконка графика в той плашке */
+        body.dark-theme p i.fa-chart-line {
+            color: #ffffff !important;
+        }
+
+        /* ===== общие стили (без изменений, только цвет заменён на серый) ===== */
         .wrapper {
             max-width: 1280px;
             margin: 0 auto;
@@ -203,7 +237,7 @@
             flex-direction: column;
         }
 
-        /* ========== ШАПКА ========== */
+        /* ШАПКА */
         header {
             display: flex;
             align-items: center;
@@ -266,7 +300,7 @@
         }
 
         .tab.active {
-            background-color: #2563eb;
+            background-color: #6b7280; /* серый */
             color: white;
         }
 
@@ -275,13 +309,13 @@
             color: #1e40af;
         }
 
-        /* ========== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ========== */
+        /* кнопка темы */
         .theme-toggle {
             background: transparent;
             border: none;
             font-size: 20px;
             cursor: pointer;
-            color: #2563eb;
+            color: #6b7280;
             transition: color 0.3s;
             display: flex;
             align-items: center;
@@ -305,7 +339,7 @@
             justify-content: flex-end;
         }
 
-        /* ========== КОНТЕНТ ========== */
+        /* КОНТЕНТ */
         .content-section {
             margin: 30px 0 20px;
             flex: 1;
@@ -319,7 +353,7 @@
             display: block;
         }
 
-        /* ========== ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ ДЛЯ НОВОСТЕЙ ========== */
+        /* ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ НОВОСТЕЙ */
         .news-scroll-container {
             width: 100%;
             overflow-x: auto;
@@ -327,7 +361,7 @@
             padding-bottom: 20px;
             margin-bottom: 20px;
             scrollbar-width: thin;
-            scrollbar-color: #2563eb #e2e8f0;
+            scrollbar-color: #6b7280 #e2e8f0;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -342,13 +376,13 @@
         }
 
         .news-scroll-container::-webkit-scrollbar-thumb {
-            background: #2563eb;
+            background: #6b7280;
             border-radius: 10px;
             transition: background 0.3s;
         }
 
         .news-scroll-container::-webkit-scrollbar-thumb:hover {
-            background: #1d4ed8;
+            background: #4b5563;
         }
 
         .news-horizontal-grid {
@@ -359,7 +393,7 @@
             padding: 8px 8px 16px 8px;
         }
 
-        /* ========== УВЕЛИЧЕННЫЕ КАРТОЧКИ НОВОСТЕЙ ========== */
+        /* КАРТОЧКИ НОВОСТЕЙ */
         .news-card {
             background: white;
             border: 1px solid #e2e8f0;
@@ -374,8 +408,8 @@
         }
 
         .news-card:hover {
-            border-color: #2563eb;
-            box-shadow: 0 20px 32px -8px rgba(37, 99, 235, 0.15);
+            border-color: #6b7280;
+            box-shadow: 0 20px 32px -8px rgba(107, 114, 128, 0.2);
             transform: translateY(-6px);
         }
 
@@ -391,7 +425,7 @@
         }
 
         .card-title i {
-            color: #2563eb;
+            color: #6b7280;
             font-size: 28px;
             width: 36px;
             text-align: center;
@@ -420,7 +454,7 @@
             transition: color 0.3s;
         }
 
-        /* ========== КАРТОЧКИ МАТЧЕЙ ========== */
+        /* КАРТОЧКИ МАТЧЕЙ */
         .card {
             background: white;
             border: 1px solid #e2e8f0;
@@ -435,7 +469,7 @@
             gap: 12px;
             align-items: center;
             margin-bottom: 20px;
-            color: #2563eb;
+            color: #6b7280;
             transition: color 0.3s;
             flex-wrap: wrap;
         }
@@ -487,7 +521,7 @@
             padding: 6px 18px;
             border-radius: 30px;
             font-weight: 700;
-            color: #2563eb;
+            color: #6b7280;
             margin: 0 10px;
             min-width: 80px;
             text-align: center;
@@ -495,7 +529,7 @@
             font-size: 15px;
         }
 
-        /* ========== РЕЙТИНГ ========== */
+        /* РЕЙТИНГ */
         .rank-list {
             list-style: none;
         }
@@ -530,7 +564,7 @@
         }
 
         .rank-points {
-            color: #2563eb;
+            color: #6b7280;
             font-weight: 700;
             transition: color 0.3s;
             font-size: 15px;
@@ -547,7 +581,7 @@
         .section-desc {
             color: #475569;
             margin-bottom: 24px;
-            border-left: 4px solid #2563eb;
+            border-left: 4px solid #6b7280;
             padding-left: 16px;
             background-color: #f8fafc;
             border-radius: 0 12px 12px 0;
@@ -557,13 +591,13 @@
             font-size: 15px;
         }
 
-        /* ========== КНОПКА TWITCH ========== */
+        /* КНОПКА TWITCH */
         .twitch-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background-color: #9146FF;
+            background-color: #6b7280;
             color: white;
             padding: 16px 28px;
             border-radius: 40px;
@@ -573,17 +607,17 @@
             transition: all 0.2s;
             border: none;
             margin-top: 24px;
-            box-shadow: 0 4px 12px rgba(145, 70, 255, 0.25);
+            box-shadow: 0 4px 12px rgba(107, 114, 128, 0.25);
             width: auto;
         }
 
         .twitch-button:hover {
-            background-color: #772ce8;
+            background-color: #4b5563;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(145, 70, 255, 0.35);
+            box-shadow: 0 8px 20px rgba(107, 114, 128, 0.35);
         }
 
-        /* ========== ШТОРКА ========== */
+        /* ШТОРКА (ПОДВАЛ) */
         .footer-shade {
             background-color: #f8fafc;
             border-top: 1px solid #cbd5e1;
@@ -621,7 +655,7 @@
         }
 
         .footer-logo-block i {
-            color: #2563eb;
+            color: #6b7280;
             font-size: 20px;
             transition: color 0.3s;
         }
@@ -636,7 +670,7 @@
         }
 
         .telegram-link {
-            background-color: #2563eb;
+            background-color: #6b7280;
             color: white;
             padding: 12px 28px;
             border-radius: 40px;
@@ -660,153 +694,47 @@
         }
 
         .telegram-link:hover {
-            background-color: #1d4ed8;
-            box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+            background-color: #4b5563;
+            box-shadow: 0 8px 18px rgba(107, 114, 128, 0.25);
         }
 
-        /* ========== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ========== */
+        /* АДАПТАЦИЯ */
         @media (max-width: 600px) {
-            .wrapper {
-                padding: 0 12px;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 16px 0;
-            }
-
-            .logo-area {
-                justify-content: center;
-            }
-
-            .logo-flash, .logo-series {
-                font-size: 22px;
-            }
-
-            .header-right {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 12px;
-            }
-
-            .nav-tabs {
-                justify-content: center;
-                width: 100%;
-                order: 1; /* Вкладки сначала */
-            }
-
-            .tab {
-                padding: 8px 12px;
-                font-size: 13px;
-                flex: 1;
-                text-align: center;
-            }
-
-            .tab i {
-                margin-right: 4px;
-            }
-
-            .theme-toggle {
-                align-self: center; /* Центрируем кнопку */
-                margin: 0 auto; /* Отключаем отрицательный margin */
-                order: 2; /* Кнопка темы ПОСЛЕ вкладок */
-                width: 40px;
-                height: 40px;
-            }
-
-            .section-title {
-                font-size: 24px;
-            }
-
-            .section-desc {
-                font-size: 14px;
-                padding: 12px 16px;
-            }
-
-            /* Уменьшаем карточки для мобильных, но сохраняем пропорции */
-            .news-card {
-                width: 320px;
-                height: 300px;
-                padding: 20px;
-            }
-
-            .card-title {
-                font-size: 20px;
-            }
-
-            .card-title i {
-                font-size: 24px;
-            }
-
-            .meta {
-                font-size: 13px;
-            }
-
-            .news-card p {
-                font-size: 15px;
-                -webkit-line-clamp: 5;
-            }
-
-            .match-header span {
-                font-size: 16px;
-            }
-
-            .team {
-                font-size: 14px;
-            }
-
-            .score {
-                font-size: 14px;
-                padding: 4px 14px;
-            }
-
-            .rank-position {
-                font-size: 15px;
-                width: 26px;
-            }
-
-            .rank-name, .rank-points {
-                font-size: 14px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-            }
-
-            .footer-logo-block, .telegram-link {
-                width: 100%;
-                min-width: unset;
-            }
-
-            .twitch-button {
-                font-size: 16px;
-                padding: 14px 24px;
-                width: 100%;
-            }
+            .wrapper { padding: 0 12px; }
+            header { flex-direction: column; align-items: stretch; padding: 16px 0; }
+            .logo-area { justify-content: center; }
+            .logo-flash, .logo-series { font-size: 22px; }
+            .header-right { flex-direction: column; align-items: stretch; gap: 12px; }
+            .nav-tabs { justify-content: center; width: 100%; order: 1; }
+            .tab { padding: 8px 12px; font-size: 13px; flex: 1; text-align: center; }
+            .tab i { margin-right: 4px; }
+            .theme-toggle { align-self: center; margin: 0 auto; order: 2; }
+            .section-title { font-size: 24px; }
+            .section-desc { font-size: 14px; padding: 12px 16px; }
+            .news-card { width: 320px; height: 300px; padding: 20px; }
+            .card-title { font-size: 20px; }
+            .card-title i { font-size: 24px; }
+            .meta { font-size: 13px; }
+            .news-card p { font-size: 15px; -webkit-line-clamp: 5; }
+            .match-header span { font-size: 16px; }
+            .team { font-size: 14px; }
+            .score { font-size: 14px; padding: 4px 14px; }
+            .rank-position { font-size: 15px; width: 26px; }
+            .rank-name, .rank-points { font-size: 14px; }
+            .footer-content { flex-direction: column; }
+            .footer-logo-block, .telegram-link { width: 100%; min-width: unset; }
+            .twitch-button { font-size: 16px; padding: 14px 24px; width: 100%; }
         }
 
-        /* Для очень маленьких экранов */
         @media (max-width: 380px) {
-            .tab {
-                padding: 6px 8px;
-                font-size: 12px;
-            }
-
-            .tab i {
-                display: none;
-            }
-
-            .news-card {
-                width: 280px;
-                height: 280px;
-            }
+            .tab { padding: 6px 8px; font-size: 12px; }
+            .tab i { display: none; }
+            .news-card { width: 280px; height: 280px; }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- Шапка: FLASH-SERIES с переключателем темы -->
         <header>
             <div class="logo-area">
                 <span class="logo-flash">FLASH</span>
@@ -826,39 +754,32 @@
 
         <!-- КОНТЕНТ -->
         <div class="content-section">
-            <!-- НОВОСТИ - УВЕЛИЧЕННЫЕ КАРТОЧКИ С ГОРИЗОНТАЛЬНЫМ СКРОЛЛОМ -->
+            <!-- НОВОСТИ -->
             <div id="news" class="tab-pane active">
                 <h2 class="section-title">Последние новости</h2>
                 <div class="section-desc">Актуальные анонсы и события FLASH-SERIES</div>
-                
                 <div class="news-scroll-container">
                     <div class="news-horizontal-grid">
-                        <!-- 1. Анонс нового рейтинга -->
+                        <!-- карточки новостей -->
                         <div class="news-card">
                             <div class="card-title"><i class="fas fa-chart-line"></i> Новый рейтинг FLASH-SERIES</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
-                            <p>Запускаем обновлённую систему рейтинга! Теперь очки начисляются за каждый сыгранный матч, а лучшие команды получают инвайты на закрытые квалификации. Следите за обновлениями!</p>
+                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#6b7280; font-weight: 600;">анонс</span></div>
+                            <p>Запускаем обновлённую систему рейтинга! Теперь очки начисляются за каждый сыгранный матч, а лучшие команды получают инвайты на закрытые квалификации.</p>
                         </div>
-                        
-                        <!-- 2. Анонс FS-SPIRE -->
                         <div class="news-card">
                             <div class="card-title"><i class="fas fa-bolt"></i> FS-SPIRE: однодневные турниры</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
-                            <p>Каждое воскресенье — FS-SPIRE! Взнос 200₽ с команды, турнир в один день от 2-х команд. Формат BO1, сетка Single-Elimination. Старт уже в следующее воскресенье! Регистрация открыта.</p>
+                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#6b7280; font-weight: 600;">анонс</span></div>
+                            <p>Каждое воскресенье — FS-SPIRE! Взнос 200₽ с команды, турнир в один день от 2-х команд. Формат BO1, сетка Single-Elimination.</p>
                         </div>
-                        
-                        <!-- 3. Анонс FS-MAJOR -->
                         <div class="news-card">
                             <div class="card-title"><i class="fas fa-trophy"></i> FS-MAJOR 2026</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">анонс</span></div>
-                            <p>Главный турнир года — FS-MAJOR — пройдёт в сентябре! Призовой фонд от 10000 ₽, инвайты на турнир в соответствии с рейтингом. Следите за квалификациями!</p>
+                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#6b7280; font-weight: 600;">анонс</span></div>
+                            <p>Главный турнир года — FS-MAJOR — пройдёт в сентябре! Призовой фонд от 10000 ₽, инвайты на турнир в соответствии с рейтингом.</p>
                         </div>
-                        
-                        <!-- 4. Новый сайт -->
                         <div class="news-card">
                             <div class="card-title"><i class="fas fa-globe"></i> Новый сайт FLASH-SERIES</div>
-                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#2563eb; font-weight: 600;">обновление</span></div>
-                            <p>Встречайте полностью новый сайт FLASH-SERIES! Удобная навигация, информация о матчах, последних новостях и рейтинг. Все турниры в одном месте!</p>
+                            <div class="meta"><i class="far fa-clock"></i> 13 февраля 2026 · <span style="color:#6b7280; font-weight: 600;">обновление</span></div>
+                            <p>Встречайте полностью новый сайт FLASH-SERIES! Удобная навигация, информация о матчах, последних новостях и рейтинг.</p>
                         </div>
                     </div>
                 </div>
@@ -873,25 +794,22 @@
                         <i class="fas fa-video"></i>
                         <span>Уже скоро!</span>
                     </div>
-                    
                     <div class="match-row">
-                        <span class="team team-left"><i class="fas fa-shield" style="color:#2563eb; margin-right: 8px;"></i> TBD</span>
+                        <span class="team team-left"><i class="fas fa-shield" style="color:#6b7280; margin-right: 8px;"></i> TBD</span>
                         <span class="score">0 : 0</span>
                         <span class="team team-right">TBD <i class="fas fa-shield" style="color:#475569; margin-left: 8px;"></i></span>
                     </div>
                     <div class="match-row">
-                        <span class="team team-left"><i class="fas fa-shield" style="color:#2563eb; margin-right: 8px;"></i> TBD</span>
+                        <span class="team team-left"><i class="fas fa-shield" style="color:#6b7280; margin-right: 8px;"></i> TBD</span>
                         <span class="score">0 : 0</span>
                         <span class="team team-right">TBD <i class="fas fa-shield" style="color:#475569; margin-left: 8px;"></i></span>
                     </div>
                     <div class="match-row">
-                        <span class="team team-left"><i class="fas fa-shield" style="color:#2563eb; margin-right: 8px;"></i> TBD</span>
+                        <span class="team team-left"><i class="fas fa-shield" style="color:#6b7280; margin-right: 8px;"></i> TBD</span>
                         <span class="score">0 : 0</span>
                         <span class="team team-right">TBD <i class="fas fa-shield" style="color:#475569; margin-left: 8px;"></i></span>
                     </div>
                 </div>
-                
-                <!-- Кнопка Twitch -->
                 <a href="https://www.twitch.tv/noroyyy" target="_blank" class="twitch-button">
                     <i class="fab fa-twitch"></i> Смотреть трансляцию на Twitch
                 </a>
@@ -903,46 +821,22 @@
                 <div class="section-desc">Официальные очки сезона 2026</div>
                 <div class="card">
                     <ul class="rank-list">
-                        <li class="rank-item">
-                            <span class="rank-position">1</span>
-                            <span class="rank-name">EXILES TEAM</span>
-                            <span class="rank-points">250 pts</span>
-                        </li>
-                        <li class="rank-item">
-                            <span class="rank-position">2</span>
-                            <span class="rank-name">VORTEX SURGE</span>
-                            <span class="rank-points">145 pts</span>
-                        </li>
-                        <li class="rank-item">
-                            <span class="rank-position">3</span>
-                            <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
-                        </li>
-                        <li class="rank-item">
-                            <span class="rank-position">4</span>
-                            <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
-                        </li>
-                        <li class="rank-item">
-                            <span class="rank-position">5</span>
-                            <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
-                        </li>
-                        <li class="rank-item">
-                            <span class="rank-position">6</span>
-                            <span class="rank-name">TBD</span>
-                            <span class="rank-points">100 pts</span>
-                        </li>
+                        <li class="rank-item"><span class="rank-position">1</span><span class="rank-name">EXILES TEAM</span><span class="rank-points">250 pts</span></li>
+                        <li class="rank-item"><span class="rank-position">2</span><span class="rank-name">VORTEX SURGE</span><span class="rank-points">145 pts</span></li>
+                        <li class="rank-item"><span class="rank-position">3</span><span class="rank-name">TBD</span><span class="rank-points">100 pts</span></li>
+                        <li class="rank-item"><span class="rank-position">4</span><span class="rank-name">TBD</span><span class="rank-points">100 pts</span></li>
+                        <li class="rank-item"><span class="rank-position">5</span><span class="rank-name">TBD</span><span class="rank-points">100 pts</span></li>
+                        <li class="rank-item"><span class="rank-position">6</span><span class="rank-name">TBD</span><span class="rank-points">100 pts</span></li>
                     </ul>
                 </div>
                 <p style="margin-top: 24px; background-color: #f1f5f9; padding: 14px 24px; border-radius: 16px; color: #1e293b; display: inline-block; width: 100%; text-align: center; font-size: 15px;">
-                    <i class="fas fa-chart-line" style="color:#2563eb; margin-right: 8px;"></i> Следующее обновление: 20 февраля
+                    <i class="fas fa-chart-line" style="color:#6b7280; margin-right: 8px;"></i> Следующее обновление: 20 февраля
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- ШТОРКА -->
+    <!-- ПОДВАЛ -->
     <div class="footer-shade">
         <div class="footer-content">
             <div class="footer-logo-block">
@@ -955,7 +849,6 @@
         </div>
     </div>
 
-    <!-- JS -->
     <script>
         (function() {
             const tabs = document.querySelectorAll('.tab');
